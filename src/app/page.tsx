@@ -17,7 +17,7 @@ export default function Home() {
         <p className={styles.description}>준비하는 중이에요. 곧 만나요!</p>
       </main>
       <footer className={styles.footer}>
-        <Link className={styles.footerLink} href="https://github.com/yoouyeon">
+        <Link className={styles.link} href="https://github.com/yoouyeon">
           {/* Github 로고 */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export default function Home() {
           Github
         </Link>
         <Link
-          className={styles.footerLink}
+          className={styles.link}
           href="https://notes.yoouyeon.dev/Thoughts/blog-project-planning"
         >
           {/* Notebook 아이콘 */}
