@@ -5,3 +5,7 @@ export const profileMetadata = {
   email: "jyeon.yoon59@gmail.com",
   github: "https://github.com/yoouyeon",
 } as const;
+
+export const contentPath = {
+  posts: "src/content/posts/",
+} as const;
