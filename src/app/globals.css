@@ -1,23 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-*: initial;
-  --color-cream: #f4f1ec;
-  --color-blackish: #1b1b1b;
-  --color-blue: #3478f6;
-  --color-blue-dark: #1e60e2;
-  --color-mud: #1d1d1a;
-  --color-lightgray: #eaeaea;
-  --color-blue-light: #539bff;
-  --color-blue-deep: #3478f6;
-  --color-warm-gray: #ddd8d0;
-  --color-charcoal: #2a2a27;
-  --color-dust: #807c75;
-  --color-silver: #a5a5a5;
-  --color-beige: #fdf7e3;
-  --color-ash: #2f2f2c;
-}
-
 :root {
   --color-page: #f4f1ec;
   --color-text: #1b1b1b;
@@ -43,6 +25,11 @@
 @theme inline {
   --color-page: var(--color-page);
   --color-text: var(--color-text);
+  --color-mute: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-highlight: var(--color-highlight);
+
   --font-sans: var(--font-noto-sans-kr);
   --font-serif: var(--font-noto-serif-kr);
 }
@@ -53,6 +40,22 @@ body {
   @apply m-0 min-h-screen p-0;
   @apply text-text antialiased;
   @apply bg-page;
+}
+
+h1 {
+  @apply text-2xl font-semibold;
+}
+
+a {
+  @apply font-medium;
+  @apply underline decoration-mute/50;
+
+  /* TODO : 아이콘을 넣고싶다 */
+}
+
+hr {
+  @apply my-4;
+  @apply border-mute/50;
 }
 
 /* layout */
