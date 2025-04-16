@@ -9,3 +9,7 @@ export const profileMetadata = {
 export const contentPath = {
   posts: "src/content/posts/",
 } as const;
+
+export const siteConfig = {
+  recentPostCount: 3,
+} as const;
