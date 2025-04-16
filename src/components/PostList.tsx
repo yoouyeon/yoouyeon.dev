@@ -17,9 +17,9 @@ function PostList({ posts }: PostListProps) {
           <li key={slug}>
             <Link className="flex gap-4 py-2" href={slug}>
               <span className="whitespace-nowrap w-full">{title}</span>
-              <p className="text-sm text-mute whitespace-nowrap">
+              <span className="text-sm text-mute whitespace-nowrap">
                 {dayjs(date).format("YY.MM.DD")}
-              </p>
+              </span>
             </Link>
           </li>
         );
