@@ -1,44 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-cream: #f4f1ec;
+  --color-blackish: #1b1b1b;
+  --color-blue: #3478f6;
+  --color-blue-dark: #1e60e2;
+  --color-mud: #1d1d1a;
+  --color-lightgray: #eaeaea;
+  --color-blue-light: #539bff;
+  --color-blue-deep: #3478f6;
+  --color-warm-gray: #ddd8d0;
+  --color-charcoal: #2a2a27;
+  --color-dust: #807c75;
+  --color-silver: #a5a5a5;
+  --color-beige: #fdf7e3;
+  --color-ash: #2f2f2c;
+}
+
 :root {
-  --background: #f4f1ec;
-  --text: #1b1b1b;
-  --primary: #3478f6;
+  --color-page: #f4f1ec;
+  --color-text: #1b1b1b;
+  --color-accent: #3478f6;
+  --color-accent-hover: #1e60e2;
+  --color-border: #ddd8d0;
+  --color-muted: #807c75;
+  --color-highlight: #fdf7e3;
+
+  --width-main: 640px; /* tailwind 기준 sm (참고: https://tailwindcss.com/docs/responsive-design)*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1d1d1a;
-    --text: #eaeaea;
-    --primary: #539bff;
-  }
+.dark {
+  --color-page: #1d1d1a;
+  --color-text: #eaeaea;
+  --color-accent: #539bff;
+  --color-accent-hover: #3478f6;
+  --color-border: #2a2a27;
+  --color-muted: #a5a5a5;
+  --color-highlight: #2f2f2c;
 }
 
-html,
+@theme inline {
+  --color-page: var(--color-page);
+  --color-text: var(--color-text);
+  --font-sans: var(--font-noto-sans-kr);
+  --font-serif: var(--font-noto-serif-kr);
+}
+
+/* global */
+
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  @apply m-0 min-h-screen p-0;
+  @apply text-text antialiased;
+  @apply bg-page;
 }
 
-body {
-  color: var(--text);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* layout */
+
+.container {
+  @apply w-full;
+  @apply px-4;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container > main {
+  @apply pt-16;
+  @apply max-w-[var(--width-main)] mx-auto;
+  @apply min-h-screen;
 }

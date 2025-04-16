@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
-import styles from "./layout.module.css";
 
 const notoSansKR = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
@@ -26,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div
-          className={`${notoSansKR.variable} ${notoSerifKR.variable} ${styles.container}`}
-        >
-          {children}
+        <div className={`${notoSansKR.variable} ${notoSerifKR.variable}`}>
+          <div className="container">{children}</div>
         </div>
       </body>
     </html>
