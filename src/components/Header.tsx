@@ -1,4 +1,6 @@
 import { profileMetadata } from "@/blog.config";
+import SearchButton from "./SearchButton";
+import ThemeButton from "./ThemeButton";
 
 type HeaderProps = {
   title: string;
@@ -10,9 +12,10 @@ export default function Header({ title, description }: HeaderProps) {
 
   return (
     <div>
-      <div>
-        <span className="text-mute">{siteTitle}</span>
-        {/* TODO - 메뉴 아이콘 버튼 */}
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-mute w-full">{siteTitle}</span>
+        {/* <SearchButton />
+          <ThemeButton /> */}
       </div>
       <h1 className="my-4">{title}</h1>
       {description && <p className="text-sm">{description}</p>}
