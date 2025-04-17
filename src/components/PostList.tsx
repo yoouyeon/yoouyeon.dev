@@ -1,16 +1,17 @@
 import Link from "next/link";
 import dayjs from "dayjs";
-import { FrontMatter } from "@/types/post";
+import { PostMeta } from "@/types/post";
 
 type PostListProps = {
-  posts: FrontMatter[];
+  posts: PostMeta[];
 };
 
 function PostList({ posts }: PostListProps) {
   return (
     <ul>
-      {posts.map((postFrontMatter) => {
-        const { title, slug, date } = postFrontMatter;
+      {posts.map((meta) => {
+        const { frontmatter, slug } = meta;
+        const { title, date } = frontmatter;
 
         return (
           <li key={slug}>

@@ -9,6 +9,7 @@ export const profileMetadata = {
 
 export const contentPath = {
   posts: "src/content/posts/",
+  filename: "index.mdx",
 } as const;
 
 export const siteConfig = {
