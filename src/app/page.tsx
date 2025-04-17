@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profileMetadata } from "@/blog.config";
+import { profileMetadata, siteConfig } from "@/blog.config";
 import Header from "@/components/Header";
 import PostList from "@/components/PostList";
 import { getAllPosts } from "@/libs/getAllPosts";
@@ -23,7 +23,7 @@ export default async function Home() {
           더보기
         </Link>
       </div>
-      <PostList posts={posts} />
+      <PostList posts={posts.slice(0, siteConfig.recentPostCount)} />
     </main>
   );
 }

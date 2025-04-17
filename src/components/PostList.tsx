@@ -1,6 +1,5 @@
 import Link from "next/link";
 import dayjs from "dayjs";
-import { siteConfig } from "@/blog.config";
 import { FrontMatter } from "@/types/post";
 
 type PostListProps = {
@@ -10,7 +9,7 @@ type PostListProps = {
 function PostList({ posts }: PostListProps) {
   return (
     <ul>
-      {posts.slice(0, siteConfig.recentPostCount).map((postFrontMatter) => {
+      {posts.map((postFrontMatter) => {
         const { title, slug, date } = postFrontMatter;
 
         return (
