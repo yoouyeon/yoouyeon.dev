@@ -170,7 +170,7 @@ a {
 }
 
 hr {
-  @apply my-4;
+  @apply my-8;
   @apply border-mute/50;
 }
 
