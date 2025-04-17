@@ -4,6 +4,12 @@ import Header from "@/components/Header";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import MdxLayout from "@/components/MdxLayout";
+import {
+  ArrowUturnLeftIcon,
+  ArrowUturnRightIcon,
+} from "@heroicons/react/16/solid";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -36,7 +42,15 @@ export default async function Post({ params }: PostProps) {
         <Link href={"/"}>{profileMetadata.authorKo}</Link>
       </div>
       <hr />
-      <PostComponent />
+      <MdxLayout>
+        <PostComponent />
+      </MdxLayout>
+      <Button variant={"ghost"} asChild>
+        <Link href={"/writings"}>
+          <ArrowUturnLeftIcon />
+          목록으로 돌아가기
+        </Link>
+      </Button>
     </main>
   );
 }
