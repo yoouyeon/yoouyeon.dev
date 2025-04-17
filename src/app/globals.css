@@ -13,6 +13,7 @@
   --color-highlight: #fdf7e3;
 
   --width-main: 640px; /* tailwind 기준 sm (참고: https://tailwindcss.com/docs/responsive-design)*/
+  --height-footer: 128px;
 
   /* TODO : 사용하지 않을 것 정리하기 */
   --radius: 0.625rem;
@@ -188,5 +189,5 @@ button {
 .container > main {
   @apply pt-16;
   @apply max-w-[var(--width-main)] mx-auto;
-  @apply min-h-screen;
+  @apply min-h-[calc(100vh-var(--height-footer))];
 }

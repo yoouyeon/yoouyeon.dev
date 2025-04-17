@@ -5,13 +5,13 @@ import PostList from "@/components/PostList";
 import { getAllPosts } from "@/libs/getAllPosts";
 
 export default async function Home() {
-  const { author, description, email, github } = profileMetadata;
+  const { authorKo, authorEn, description, email, github } = profileMetadata;
 
   const posts = await getAllPosts();
 
   return (
     <main>
-      <Header title={author} description={description} />
+      <Header title={`${authorKo}(${authorEn})`} description={description} />
       <div className="flex gap-4 text-sm pt-4">
         <Link href={github}>Github</Link>
         <Link href={`mailto:${email}`}>Mail</Link>
