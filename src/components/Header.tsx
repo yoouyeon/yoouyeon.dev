@@ -1,6 +1,4 @@
 import { profileMetadata } from "@/blog.config";
-import SearchButton from "./SearchButton";
-import ThemeButton from "./ThemeButton";
 
 type HeaderProps = {
   title: string;
