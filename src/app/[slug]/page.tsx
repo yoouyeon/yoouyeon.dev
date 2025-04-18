@@ -1,15 +1,12 @@
 import dayjs from "dayjs";
-import { contentPath, profileMetadata } from "@/blog.config";
+import { profileMetadata } from "@/blog.config";
 import Header from "@/components/Header";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import MdxLayout from "@/components/MdxLayout";
-import {
-  ArrowUturnLeftIcon,
-  ArrowUturnRightIcon,
-} from "@heroicons/react/16/solid";
+import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -28,8 +25,7 @@ export default async function Post({ params }: PostProps) {
   const { default: PostComponent } = await import(
     `@/content/posts/${slug}/index.mdx`
   );
-  const { posts, filename } = contentPath;
-  const { meta } = parseMdx(`${posts}${slug}/${filename}`);
+  const { meta } = parseMdx(`src/content/posts/${slug}/index.mdx`);
   const { frontmatter } = meta;
   const { title, description, date } = frontmatter;
 

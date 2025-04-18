@@ -7,11 +7,6 @@ export const profileMetadata = {
   github: "https://github.com/yoouyeon",
 } as const;
 
-export const contentPath = {
-  posts: "src/content/posts/",
-  filename: "index.mdx",
-} as const;
-
 export const siteConfig = {
   recentPostCount: 3,
 } as const;

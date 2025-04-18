@@ -1,11 +1,9 @@
-import { glob } from "glob";
-import { contentPath } from "@/blog.config";
-import { generateSlugFromPath } from "./generateSlugFromPath";
+import { glob } from "fast-glob";
 import { PostMeta } from "@/types/post";
 import { parseMdx } from "@/libs/parseMdx";
 
 export const getAllPosts = async () => {
-  const posts = await glob(`${contentPath.posts}**/*.mdx`);
+  const posts = await glob("src/content/posts/**/*.mdx");
   const postList: PostMeta[] = [];
 
   for (const postPath of posts) {
