@@ -29,6 +29,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+    code: ({ children }) => (
+      <code className="bg-mute/30 rounded px-1 py-0.5 text-sm font-semibold">
+        {children}
+      </code>
+    ),
     CodeBlock: CodeBlock,
   };
 }
