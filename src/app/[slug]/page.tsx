@@ -4,6 +4,7 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import { profileMetadata } from "@/blog.config";
 import Header from "@/components/Header";
 import MdxLayout from "@/components/MdxLayout";
+import Giscus from "@/components/Giscus";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
@@ -62,6 +63,7 @@ export default async function Post({ params }: PostProps) {
           </Link>
         </Button>
       </section>
+      <Giscus />
     </main>
   );
 }
