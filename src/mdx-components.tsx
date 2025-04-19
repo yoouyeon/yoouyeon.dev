@@ -34,6 +34,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </code>
     ),
+    table: ({ children }) => (
+      <table className="w-full border-collapse border border-mute mb-5">
+        {children}
+      </table>
+    ),
+    th: ({ children }) => (
+      <th className="border border-mute bg-mute/30 px-2 py-1 text-left">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="border border-mute px-2 py-1">{children}</td>
+    ),
     CodeBlock: CodeBlock,
   };
 }
