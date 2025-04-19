@@ -154,21 +154,6 @@
   }
 }
 
-h1 {
-  @apply text-2xl font-semibold;
-}
-
-h2 {
-  @apply text-xl font-semibold;
-}
-
-a {
-  @apply font-medium;
-  @apply underline decoration-mute/50;
-
-  /* TODO : 아이콘을 넣고싶다 */
-}
-
 hr {
   @apply my-8;
   @apply border-mute/50;
@@ -176,7 +161,6 @@ hr {
 
 button {
   @apply cursor-pointer;
-  @apply hover:bg-mute/30;
 }
 
 /* layout */

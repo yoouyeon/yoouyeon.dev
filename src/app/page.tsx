@@ -18,7 +18,7 @@ export default async function Home() {
       </div>
       <hr />
       <div className="flex gap-4 mt-8 mb-4 items-center">
-        <h2 className="w-full">최근 글</h2>
+        <h2 className="w-full text-xl font-semibold">최근 글</h2>
         <Link className="whitespace-nowrap text-sm" href="/writings">
           더보기
         </Link>
