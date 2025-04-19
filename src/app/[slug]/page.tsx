@@ -41,6 +41,17 @@ export default async function Post({ params }: PostProps) {
       <MdxLayout>
         <PostComponent />
       </MdxLayout>
+      <div
+        role="separator"
+        aria-orientation="horizontal"
+        className="flex items-center py-16"
+      >
+        <div className="flex-grow border-t" aria-hidden="true" />
+        <span className="px-3 text-sm whitespace-nowrap font-light text-mute">
+          end
+        </span>
+        <div className="flex-grow border-t" aria-hidden="true" />
+      </div>
       <Button variant={"ghost"} asChild>
         <Link href={"/writings"}>
           <ArrowUturnLeftIcon />
