@@ -167,12 +167,12 @@ button {
 
 .container {
   @apply w-full;
-  @apply px-4;
+  @apply px-4 mx-auto;
   @apply font-sans;
 }
 
 .container > main {
-  @apply pt-16;
+  @apply py-16;
   @apply max-w-[var(--width-main)] mx-auto;
   @apply min-h-[calc(100vh-var(--height-footer))];
 }
