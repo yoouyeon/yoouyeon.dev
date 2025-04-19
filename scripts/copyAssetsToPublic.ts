@@ -28,4 +28,11 @@ async function copyAssetsToPublic() {
   );
 }
 
-await copyAssetsToPublic();
+copyAssetsToPublic()
+  .then(() => {
+    console.log("에셋 복사 완료");
+  })
+  .catch((error) => {
+    console.error("에셋 복사 중 오류 발생:", error);
+    process.exit(1);
+  });
