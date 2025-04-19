@@ -1,7 +1,28 @@
 import type { MDXComponents } from "mdx/types";
+import CodeBlock from "@/components/codeblock";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
+    h2: ({ children }) => (
+      <h2 className="mt-6 mb-4 text-2xl font-bold">{children}</h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="mt-6 mb-2 text-xl font-bold">{children}</h3>
+    ),
+    p: ({ children }) => <p className="mb-5 leading-7">{children}</p>,
+    ul: ({ children }) => (
+      <ul className="list-disc list-outside pl-4">{children}</ul>
+    ),
+    ol: ({ children }) => (
+      <ol className="list-decimal list-outside pl-4">{children}</ol>
+    ),
+    li: ({ children }) => <li className="leading-7">{children}</li>,
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-mute/50 pl-4 font-serif">
+        {children}
+      </blockquote>
+    ),
+    CodeBlock: CodeBlock,
   };
 }
