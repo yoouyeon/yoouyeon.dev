@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx --yes tsx scripts/copyAssetsToPublic.ts",
+    "update-submodule": "git submodule update --init --recursive",
+    "copy-assets": "tsx scripts/copyAssetsToPublic.ts",
     "build": "next build",
+    "build:all": "echo 'update submodule...' && pnpm update-submodule && echo 'copy assets...' && pnpm copy-assets && echo 'build...' && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -44,6 +46,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   },
   "pnpm": {
