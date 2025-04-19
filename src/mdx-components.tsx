@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import CodeBlock from "@/components/codeblock";
+import "@/styles/mdx.css";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -22,6 +23,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <blockquote className="border-l-4 border-mute/50 pl-4 font-serif">
         {children}
       </blockquote>
+    ),
+    a: ({ children, href }) => (
+      <a href={href} className="mdx-link">
+        {children}
+      </a>
     ),
     CodeBlock: CodeBlock,
   };
