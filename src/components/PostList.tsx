@@ -16,7 +16,9 @@ function PostList({ posts }: PostListProps) {
         return (
           <li key={slug}>
             <Link className="flex gap-4 py-2" href={slug}>
-              <span className="whitespace-nowrap w-full">{title}</span>
+              <span className="whitespace-nowrap w-full underline underline-offset-4 decoration-1 hover:decoration-accent">
+                {title}
+              </span>
               <span className="text-sm text-mute whitespace-nowrap">
                 {dayjs(date).format("YY.MM.DD")}
               </span>

@@ -6,7 +6,7 @@
 
 .mdx-link {
   @apply font-medium;
-  @apply underline underline-offset-4 decoration-2 hover:decoration-accent;
+  @apply underline underline-offset-4 decoration-2 decoration-mute/30 hover:decoration-accent;
 }
 
 .mdx-link:after {

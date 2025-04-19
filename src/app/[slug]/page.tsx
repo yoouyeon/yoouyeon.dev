@@ -1,12 +1,12 @@
+import Link from "next/link";
 import dayjs from "dayjs";
+import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import { profileMetadata } from "@/blog.config";
 import Header from "@/components/Header";
+import MdxLayout from "@/components/MdxLayout";
+import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import MdxLayout from "@/components/MdxLayout";
-import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -34,8 +34,10 @@ export default async function Post({ params }: PostProps) {
       <Header title={title} description={description} />
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
-        <span className="mx-1">| by</span>
-        <Link href={"/"}>{profileMetadata.authorKo}</Link>
+        <span className="ml-1">| by</span>
+        <Button asChild variant={"link"} size={"xs"}>
+          <Link href={"/"}>{profileMetadata.authorKo}</Link>
+        </Button>
       </div>
       <hr />
       <MdxLayout>
@@ -52,12 +54,14 @@ export default async function Post({ params }: PostProps) {
         </span>
         <div className="flex-grow border-t" aria-hidden="true" />
       </div>
-      <Button variant={"ghost"} asChild>
-        <Link href={"/writings"}>
-          <ArrowUturnLeftIcon />
-          목록으로 돌아가기
-        </Link>
-      </Button>
+      <section role="navigation" className="mb-16">
+        <Button variant={"link"} size={"sm"} asChild>
+          <Link href={"/writings"}>
+            <ArrowUturnLeftIcon />
+            목록으로 돌아가기
+          </Link>
+        </Button>
+      </section>
     </main>
   );
 }
