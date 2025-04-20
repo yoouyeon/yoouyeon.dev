@@ -7,7 +7,8 @@ import { getAllPosts } from "@/libs/getAllPosts";
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
-  const { authorKo, authorEn, description, email, github } = profileMetadata;
+  const { authorKo, authorEn, description, email, github, wiki } =
+    profileMetadata;
 
   const posts = await getAllPosts();
 
@@ -16,10 +17,13 @@ export default async function Home() {
       <Header title={`${authorKo}(${authorEn})`} description={description} />
       <div className="flex gap-4 text-sm pt-4">
         <Button asChild variant={"link"} size={"xs"}>
+          <Link href={`mailto:${email}`}>Mail</Link>
+        </Button>
+        <Button asChild variant={"link"} size={"xs"}>
           <Link href={github}>Github</Link>
         </Button>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link href={`mailto:${email}`}>Mail</Link>
+          <Link href={wiki}>Wiki</Link>
         </Button>
       </div>
       <hr />
