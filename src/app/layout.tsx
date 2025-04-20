@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
-import "./globals.css";
-import styles from "./layout.module.css";
-
-const notoSansKR = Noto_Sans_KR({
-  variable: "--font-noto-sans-kr",
-  subsets: ["latin"],
-});
+import localFont from "next/font/local";
+import { Noto_Serif_KR } from "next/font/google";
+import Footer from "@/components/Footer";
+import "@/styles/globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
   variable: "--font-noto-serif-kr",
   subsets: ["latin"],
+});
+
+const pretendard = localFont({
+  src: "../fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  display: "swap",
+  weight: "45 920",
 });
 
 export const metadata: Metadata = {
@@ -26,10 +29,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div
-          className={`${notoSansKR.variable} ${notoSerifKR.variable} ${styles.container}`}
-        >
-          {children}
+        <div className={`${pretendard.variable} ${notoSerifKR.variable}`}>
+          <div className="container">
+            {children}
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
