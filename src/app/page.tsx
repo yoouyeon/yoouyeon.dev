@@ -20,10 +20,14 @@ export default async function Home() {
           <Link href={`mailto:${email}`}>Mail</Link>
         </Button>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link href={github}>Github</Link>
+          <Link rel="noopener noreferrer" target="_blank" href={github}>
+            Github
+          </Link>
         </Button>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link href={wiki}>Wiki</Link>
+          <Link rel="noopener noreferrer" target="_blank" href={wiki}>
+            Wiki
+          </Link>
         </Button>
       </div>
       <hr />
