@@ -6,7 +6,6 @@ import { BLOG_PROFILE } from "@/config/blog";
 import Header from "@/components/Header";
 import MdxLayout from "@/components/MdxLayout";
 import Giscus from "@/components/Giscus";
-import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
 
@@ -51,9 +50,9 @@ export default async function Post({ params }: PostProps) {
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
         <span className="ml-1">| by</span>
-        <Button asChild variant={"link"} size={"xs"}>
+        <button className="link-button">
           <Link href={"/"}>{BLOG_PROFILE.AUTHOR.KO}</Link>
-        </Button>
+        </button>
       </div>
       <hr />
       <MdxLayout>
@@ -71,12 +70,12 @@ export default async function Post({ params }: PostProps) {
         <div className="flex-grow border-t" aria-hidden="true" />
       </div>
       <section role="navigation" className="mb-16">
-        <Button variant={"link"} size={"sm"} asChild>
+        <button>
           <Link href={"/writings"}>
             <ArrowUturnLeftIcon />
             목록으로 돌아가기
           </Link>
-        </Button>
+        </button>
       </section>
       <Giscus />
     </main>
