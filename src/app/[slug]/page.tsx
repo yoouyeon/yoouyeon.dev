@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import dayjs from "dayjs";
 import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
-import { profileMetadata } from "@/blog.config";
+import { BLOG_PROFILE } from "@/config/blog";
 import Header from "@/components/Header";
 import MdxLayout from "@/components/MdxLayout";
 import Giscus from "@/components/Giscus";
@@ -21,6 +22,20 @@ type PostProps = {
   params: Promise<{ slug: string }>;
 };
 
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
+  const { slug } = await params;
+  const { meta } = parseMdx(`src/content/posts/${slug}/index.mdx`);
+  const { frontmatter } = meta;
+  const { title, description } = frontmatter;
+
+  return {
+    title,
+    description,
+  };
+}
+
 export default async function Post({ params }: PostProps) {
   const { slug } = await params;
   const { default: PostComponent } = await import(
@@ -37,7 +52,7 @@ export default async function Post({ params }: PostProps) {
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
         <span className="ml-1">| by</span>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link href={"/"}>{profileMetadata.authorKo}</Link>
+          <Link href={"/"}>{BLOG_PROFILE.AUTHOR.KO}</Link>
         </Button>
       </div>
       <hr />

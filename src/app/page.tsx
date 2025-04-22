@@ -1,31 +1,30 @@
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
-import { profileMetadata, siteConfig } from "@/blog.config";
+import { BLOG_PROFILE, BLOG_SETTING } from "@/config/blog";
 import Header from "@/components/Header";
 import PostList from "@/components/PostList";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
-  const { authorKo, authorEn, description, email, github, wiki } =
-    profileMetadata;
+  const { BIO, AUTHOR, LINKS } = BLOG_PROFILE;
 
   const posts = await getAllPosts();
 
   return (
     <main>
-      <Header title={`${authorKo}(${authorEn})`} description={description} />
+      <Header title={`${AUTHOR.KO}(${AUTHOR.EN})`} description={BIO} />
       <div className="flex gap-4 text-sm pt-4">
         <Button asChild variant={"link"} size={"xs"}>
-          <Link href={`mailto:${email}`}>Mail</Link>
+          <Link href={`mailto:${LINKS.EMAIL}`}>Mail</Link>
         </Button>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link rel="noopener noreferrer" target="_blank" href={github}>
+          <Link rel="noopener noreferrer" target="_blank" href={LINKS.GITHUB}>
             Github
           </Link>
         </Button>
         <Button asChild variant={"link"} size={"xs"}>
-          <Link rel="noopener noreferrer" target="_blank" href={wiki}>
+          <Link rel="noopener noreferrer" target="_blank" href={LINKS.WIKI}>
             Wiki
           </Link>
         </Button>
@@ -40,7 +39,7 @@ export default async function Home() {
           </Link>
         </Button>
       </div>
-      <PostList posts={posts.slice(0, siteConfig.recentPostCount)} />
+      <PostList posts={posts.slice(0, BLOG_SETTING.RECENT_POST_COUNT)} />
     </main>
   );
 }
