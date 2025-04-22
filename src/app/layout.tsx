@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Noto_Serif_KR } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { GA_ID } from "@/config/analytics";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
@@ -36,6 +38,7 @@ export default function RootLayout({
           </div>
         </div>
       </body>
+      <GoogleAnalytics gaId={GA_ID} />
     </html>
   );
 }

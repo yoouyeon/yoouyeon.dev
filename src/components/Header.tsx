@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profileMetadata } from "@/blog.config";
+import { BLOG_PROFILE } from "@/config/blog";
 
 type HeaderProps = {
   title: string;
@@ -7,8 +7,6 @@ type HeaderProps = {
 };
 
 export default function Header({ title, description }: HeaderProps) {
-  const { siteTitle } = profileMetadata;
-
   return (
     <div className="flex flex-col items-start justify-between gap-4 pb-4">
       <div className="flex items-center justify-between gap-2">
@@ -16,7 +14,7 @@ export default function Header({ title, description }: HeaderProps) {
           href={"/"}
           className="text-mute w-full hover:underline hover:underline-offset-4 hover:decoration-1 hover:decoration-mute/30"
         >
-          {siteTitle}
+          {BLOG_PROFILE.TITLE}
         </Link>
         {/* <SearchButton />
           <ThemeButton /> */}
