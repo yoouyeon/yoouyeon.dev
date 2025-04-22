@@ -45,7 +45,7 @@ export default async function Post({ params }: PostProps) {
   const { title, description, date } = frontmatter;
 
   return (
-    <main>
+    <>
       <Header title={title} description={description} />
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
@@ -78,6 +78,6 @@ export default async function Post({ params }: PostProps) {
         </button>
       </section>
       <Giscus />
-    </main>
+    </>
   );
 }

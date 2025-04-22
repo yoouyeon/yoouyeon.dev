@@ -53,17 +53,3 @@ hr {
 button {
   @apply cursor-pointer;
 }
-
-/* layout */
-
-.container {
-  @apply w-full;
-  @apply px-4 mx-auto;
-  @apply font-sans;
-}
-
-.container > main {
-  @apply py-16;
-  @apply max-w-[var(--width-main)] mx-auto;
-  @apply min-h-[calc(100vh-var(--height-footer))];
-}

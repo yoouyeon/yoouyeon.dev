@@ -6,7 +6,7 @@ export default async function Writings() {
   const posts = await getAllPosts();
 
   return (
-    <main>
+    <>
       <Header
         title={"Writings"}
         description={"겪고 배운 것들을 글로 정리했습니다."}
@@ -16,6 +16,6 @@ export default async function Writings() {
         총 {posts.length}개의 글
       </div>
       <PostList posts={posts} />
-    </main>
+    </>
   );
 }

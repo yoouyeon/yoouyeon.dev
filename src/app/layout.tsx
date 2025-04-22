@@ -31,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className={`${pretendard.variable} ${notoSerifKR.variable}`}>
-          <div className="container">
+        <div
+          className={`${pretendard.variable} ${notoSerifKR.variable} w-full px-4 mx-auto font-sans`}
+        >
+          <main className="py-16 max-w-(--width-main) mx-auto min-h-[calc(100vh-var(--height-footer))]">
             {children}
-            <Footer />
-          </div>
+          </main>
+          <Footer />
         </div>
       </body>
       <GoogleAnalytics gaId={GA_ID} />

@@ -11,7 +11,7 @@ export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <main>
+    <>
       <Header title={`${AUTHOR.KO}(${AUTHOR.EN})`} description={BIO} />
       <div className="flex gap-4 text-sm pt-4">
         <button className="link-button">
@@ -39,6 +39,6 @@ export default async function Home() {
         </button>
       </div>
       <PostList posts={posts.slice(0, BLOG_SETTING.RECENT_POST_COUNT)} />
-    </main>
+    </>
   );
 }
