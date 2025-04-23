@@ -10,6 +10,8 @@ import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
 import Button from "@/components/ui/Button";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = await getAllPosts();
 
