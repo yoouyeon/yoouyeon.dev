@@ -8,6 +8,7 @@ import MdxLayout from "@/components/MdxLayout";
 import Giscus from "@/components/Giscus";
 import { getAllPosts } from "@/libs/getAllPosts";
 import { parseMdx } from "@/libs/parseMdx";
+import Button from "@/components/ui/Button";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -50,9 +51,9 @@ export default async function Post({ params }: PostProps) {
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
         <span className="ml-1">| by</span>
-        <button className="link-button">
+        <Button variant={"link"} asChild>
           <Link href={"/"}>{BLOG_PROFILE.AUTHOR.KO}</Link>
-        </button>
+        </Button>
       </div>
       <hr />
       <MdxLayout>
