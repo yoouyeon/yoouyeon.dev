@@ -1,5 +1,5 @@
 import { RawCode, highlight, Pre } from "codehike/code";
-import { lineNumbers } from "./line-numbers";
+import { lineNumbers } from "./lineNumbers";
 import "@/styles/codeblock.css";
 
 type CodeBlockProps = {
@@ -10,7 +10,7 @@ async function CodeBlock({ codeblock }: CodeBlockProps) {
   const highlighted = await highlight(codeblock, "material-from-css");
 
   return (
-    <div className="border font-mono text-sm leading-6 overflow-auto bg-[#fafafa] rounded-lg py-4 mb-5">
+    <div className="border border-mute/50 font-mono text-sm leading-6 overflow-auto bg-[#fafafa] dark:bg-[#263238] rounded-md py-4 mb-5">
       <Pre code={highlighted} handlers={[lineNumbers]} />
     </div>
   );

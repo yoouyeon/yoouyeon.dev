@@ -14,15 +14,16 @@ function PostList({ posts }: PostListProps) {
         const { title, date } = frontmatter;
 
         return (
-          <li key={slug}>
-            <Link className="flex gap-4 py-2" href={slug}>
-              <span className="whitespace-nowrap w-full underline underline-offset-4 decoration-1 hover:decoration-accent">
-                {title}
-              </span>
-              <span className="text-sm text-mute whitespace-nowrap">
-                {dayjs(date).format("YY.MM.DD")}
-              </span>
+          <li key={slug} className="flex gap-4 py-2">
+            <Link
+              href={slug}
+              className="whitespace-nowrap w-full hover:underline hover:decoration-accent"
+            >
+              <span>{title}</span>
             </Link>
+            <span className="text-sm text-mute whitespace-nowrap">
+              {dayjs(date).format("YY.MM.DD")}
+            </span>
           </li>
         );
       })}

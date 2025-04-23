@@ -1,28 +1,5 @@
 /* https://github.com/code-hike/lighter/blob/main/lib/themes/material-from-css.css */
 
-/* :root {
-  --ch-0: dark;
-  --ch-1: #212121;
-  --ch-2: #eeffff;
-  --ch-3: #c3e88d;
-  --ch-4: #89ddff;
-  --ch-5: #ff9cac;
-  --ch-6: #f78c6c;
-  --ch-7: #82aaff;
-  --ch-8: #c792ea;
-  --ch-9: #f07178;
-  --ch-10: #ffcb6b;
-  --ch-11: #545454;
-  --ch-12: #b2ccd6;
-  --ch-13: #eeffff90;
-  --ch-14: #61616150;
-  --ch-15: #424242;
-  --ch-16: #ffffff;
-  --ch-17: #616161;
-  --ch-18: #00000030;
-  --ch-19: #ffffff;
-} */
-
 :root {
   --ch-0: light;
   --ch-1: #fafafa;
@@ -44,4 +21,27 @@
   --ch-17: #7e939e;
   --ch-18: #ccd7da50;
   --ch-19: #b1c7d3;
+}
+
+.dark {
+  --ch-0: dark;
+  --ch-1: #212121;
+  --ch-2: #eeffff;
+  --ch-3: #c3e88d;
+  --ch-4: #89ddff;
+  --ch-5: #ff9cac;
+  --ch-6: #f78c6c;
+  --ch-7: #82aaff;
+  --ch-8: #c792ea;
+  --ch-9: #f07178;
+  --ch-10: #ffcb6b;
+  --ch-11: #545454;
+  --ch-12: #b2ccd6;
+  --ch-13: #eeffff90;
+  --ch-14: #61616150;
+  --ch-15: #424242;
+  --ch-16: #ffffff;
+  --ch-17: #616161;
+  --ch-18: #00000030;
+  --ch-19: #ffffff;
 }

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Noto_Serif_KR } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GA_ID } from "@/config/analytics";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import "@/styles/globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -29,14 +31,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <div className={`${pretendard.variable} ${notoSerifKR.variable}`}>
-          <div className="container">
-            {children}
+        <ThemeProvider attribute="class">
+          <div
+            className={`${pretendard.variable} ${notoSerifKR.variable} w-full px-4 mx-auto font-sans`}
+          >
+            <main className="py-16 max-w-(--width-main) mx-auto min-h-[calc(100vh-var(--height-footer))]">
+              <Header />
+              {children}
+            </main>
             <Footer />
           </div>
-        </div>
+        </ThemeProvider>
       </body>
       <GoogleAnalytics gaId={GA_ID} />
     </html>
