@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GA_ID } from "@/config/analytics";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import "@/styles/globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -37,6 +38,7 @@ export default function RootLayout({
             className={`${pretendard.variable} ${notoSerifKR.variable} w-full px-4 mx-auto font-sans`}
           >
             <main className="py-16 max-w-(--width-main) mx-auto min-h-[calc(100vh-var(--height-footer))]">
+              <Header />
               {children}
             </main>
             <Footer />

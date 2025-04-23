@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import { BLOG_PROFILE, BLOG_SETTING } from "@/config/blog";
-import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import PostList from "@/components/PostList";
 import Button from "@/components/ui/Button";
 import { getAllPosts } from "@/libs/getAllPosts";
@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header title={`${AUTHOR.KO}(${AUTHOR.EN})`} description={BIO} />
+      <PageHeader title={`${AUTHOR.KO}(${AUTHOR.EN})`} description={BIO} />
       <div className="flex gap-4 text-sm pt-4">
         <Button variant={"link"} asChild>
           <Link href={`mailto:${LINKS.EMAIL}`}>Mail</Link>

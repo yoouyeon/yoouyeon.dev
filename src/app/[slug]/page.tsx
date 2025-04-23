@@ -3,7 +3,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import { BLOG_PROFILE } from "@/config/blog";
-import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import MdxLayout from "@/components/MdxLayout";
 import Giscus from "@/components/Giscus";
 import { getAllPosts } from "@/libs/getAllPosts";
@@ -49,7 +49,7 @@ export default async function Post({ params }: PostProps) {
 
   return (
     <>
-      <Header title={title} description={description} />
+      <PageHeader title={title} description={description} />
       <div className="text-sm text-mute font-light">
         <span>{dayjs(date).format("YYYY년 MM월 DD일")}</span>
         <span className="ml-1">| by</span>

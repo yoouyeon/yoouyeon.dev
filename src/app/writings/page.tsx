@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import PostList from "@/components/PostList";
 import { getAllPosts } from "@/libs/getAllPosts";
 
@@ -7,7 +7,7 @@ export default async function Writings() {
 
   return (
     <>
-      <Header
+      <PageHeader
         title={"Writings"}
         description={"겪고 배운 것들을 글로 정리했습니다."}
       />
