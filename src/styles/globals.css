@@ -11,6 +11,7 @@
 
   --width-main: 640px; /* tailwind 기준 sm (참고: https://tailwindcss.com/docs/responsive-design)*/
   --height-footer: 128px;
+  --radius: 0.625rem; /* shadcn-ui 기준 */
 }
 
 .dark {
@@ -24,6 +25,7 @@
 }
 
 @theme inline {
+  /* --- color --- */
   --color-page: var(--color-page);
   --color-text: var(--color-text);
   --color-mute: var(--color-muted);
@@ -31,11 +33,16 @@
   --color-accent-hover: var(--color-accent-hover);
   --color-highlight: var(--color-highlight);
 
+  /* --- font --- */
   --font-sans: var(--font-pretendard);
   --font-serif: var(--font-noto-serif-kr);
-}
 
-/* global */
+  /* --- size --- */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
 
 @layer base {
   body {
@@ -43,13 +50,13 @@
     @apply text-text antialiased;
     @apply bg-page;
   }
-}
 
-hr {
-  @apply my-8;
-  @apply border-mute/50;
-}
+  hr {
+    @apply my-8;
+    @apply border-mute/50;
+  }
 
-button {
-  @apply cursor-pointer;
+  button {
+    @apply cursor-pointer;
+  }
 }
