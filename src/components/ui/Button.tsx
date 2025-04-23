@@ -8,7 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "gap-2 hover:bg-mute/30 rounded-md px-1.5 py-1.5",
-        link: "underline underline-offset-4 hover:no-underline hover:bg-mute/30 h-fit rounded-sm gap-1.5 px-1 has-[>svg]:px-0.5 gap-0.5",
+        link: "hover:bg-mute/30 h-fit rounded-sm gap-1.5 px-1 has-[>svg]:px-0.5 gap-0.5",
         icon: "",
       },
     },
