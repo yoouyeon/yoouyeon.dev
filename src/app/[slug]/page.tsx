@@ -71,12 +71,12 @@ export default async function Post({ params }: PostProps) {
         <div className="flex-grow border-t" aria-hidden="true" />
       </div>
       <section role="navigation" className="mb-16">
-        <button>
+        <Button asChild>
           <Link href={"/writings"}>
-            <ArrowUturnLeftIcon />
+            <ArrowUturnLeftIcon className="w-4 h-4" />
             목록으로 돌아가기
           </Link>
-        </button>
+        </Button>
       </section>
       <Giscus />
     </>

@@ -3,11 +3,11 @@ import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/libs/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap font-medium",
+  "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium",
   {
     variants: {
       variant: {
-        default: "",
+        default: "gap-2 hover:bg-mute/30 rounded-md px-1.5 py-1.5",
         link: "underline underline-offset-4 hover:no-underline hover:bg-mute/30 h-fit rounded-sm gap-1.5 px-1 has-[>svg]:px-0.5 gap-0.5",
         icon: "",
       },
