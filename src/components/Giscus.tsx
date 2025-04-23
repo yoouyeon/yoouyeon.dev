@@ -1,11 +1,13 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
+import { GISCUS_CONFIG } from "@/config/giscus";
 
 export default function Giscus() {
   const giscusRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme: theme } = useTheme();
+  const { REPO, REPO_ID, CATEGORY, CATEGORY_ID } = GISCUS_CONFIG;
 
   useEffect(() => {
     if (!theme || !giscusRef.current) return;
@@ -17,10 +19,10 @@ export default function Giscus() {
 
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "yoouyeon/blog-comment");
-    script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkzNjA5NDQ5OTI=");
-    script.setAttribute("data-category", "yoouyeon.dev");
-    script.setAttribute("data-category-id", "DIC_kwDOFYOVYM4CBAj0");
+    script.setAttribute("data-repo", REPO);
+    script.setAttribute("data-repo-id", REPO_ID);
+    script.setAttribute("data-category", CATEGORY);
+    script.setAttribute("data-category-id", CATEGORY_ID);
     script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");
