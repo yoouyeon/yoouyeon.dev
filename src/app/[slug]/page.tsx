@@ -66,11 +66,11 @@ export default async function Post({ params }: PostProps) {
         aria-orientation="horizontal"
         className="flex items-center py-16"
       >
-        <div className="flex-grow border-t" aria-hidden="true" />
+        <div className="flex-grow border-t border-mute/50" aria-hidden="true" />
         <span className="px-3 text-sm whitespace-nowrap font-light text-mute">
           end
         </span>
-        <div className="flex-grow border-t" aria-hidden="true" />
+        <div className="flex-grow border-t border-mute/50" aria-hidden="true" />
       </div>
       <section role="navigation" className="mb-16">
         <Button asChild>
