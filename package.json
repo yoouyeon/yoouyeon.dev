@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:all": "pnpm ready-content && pnpm dev",
     "update-submodule": "git submodule update --remote --merge",
     "copy-assets": "tsx scripts/copyAssetsToPublic.ts",
+    "ready-content": "pnpm update-submodule &&pnpm copy-assets",
     "build": "next build",
     "build:all": "echo 'update submodule...' && pnpm update-submodule && echo 'copy assets...' && pnpm copy-assets && echo 'build...' && next build",
     "start": "next start",
